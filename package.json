@@ -11,6 +11,10 @@
     "scripts": {
         "test": "node ./test/test"
     },
+	"devDependencies": {
+		"mocha": "*",
+		"should": "*"
+	},
     "readme": "### ntools\na collection of tools and utilities for node.js\n####installation\nnpm install ntools",
     "readmeFilename": "README.md"
 }

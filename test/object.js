@@ -2,8 +2,11 @@
 
 var path = require('path'),
     h = require('helpers')(__dirname, exports),
-    ntools = h.sub('/../ntools'),
-    assert = require('should');
+    ntools = h.sub('/../ntools');
+
+var chai = require('chai');
+var expect = chai.expect;
+chai.should();
 
 describe('ntools.object', function () {
 
@@ -15,13 +18,10 @@ describe('ntools.object', function () {
                 classNames: ['test'],
                 data: [1,2]
             },
-            childNodes: [{
+            parentNode: {
                 tag: 'div',
-                childNodes: [{
-                    tag: 'div',
-                    childNodes: []
-                }]
-            }]
+                childNodes: []
+            }
         };
         var source = {
             tag: 'body',
@@ -29,17 +29,29 @@ describe('ntools.object', function () {
                 classNames: ['test2'],
                 data: [3]
             },
-            childNodes: [{
-                tag: 'ul',
+            parentNode: {
                 childNodes: [{
                     tag: 'li',
                     childNodes: []
                 }]
-            }]
+            }
+        };
+        var expected = {
+            tag: 'body',
+            attributes: {
+                classNames: ['test2'],
+                data: [3, 2]
+            },
+            parentNode: {
+                tag: 'div',
+                childNodes: [{
+                    tag: 'li',
+                    childNodes: []
+                }]
+            }
         };
         var result = object.extend(target, source);
-        result.tag.should.equal('body');
-        result.childNodes.length.should.equal(2);
+        expect(result).to.deep.equal(expected);
     });
 
     it('has a clone method to clone objects', function () {
@@ -52,8 +64,7 @@ describe('ntools.object', function () {
         };
         var result = object.clone(source);
         result.childNodes.should.not.equal(source.childNodes);
-        source.should.deep.equal(result);
+        expect(source).to.deep.equal(result);
     });
-
 
 })
