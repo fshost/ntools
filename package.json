@@ -1,0 +1,16 @@
+{
+    "name": "ntools",
+    "description": "a collection of tools and utilities for node.js",
+    "version": "0.0.1",
+    "author": "Mashdraggin",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fshost/ntools.git"
+    },
+    "scripts": {
+        "test": "node ./test/test"
+    },
+    "readme": "### ntools\na collection of tools and utilities for node.js\n####installation\nnpm install ntools",
+    "readmeFilename": "README.md"
+}
