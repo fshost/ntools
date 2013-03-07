@@ -6,7 +6,7 @@ chai.should();
 
 describe('ntools.object', function () {
 
-    var object = require(path.join(__dirname, '..', 'ntools')).object;
+    var object = require(path.join(__dirname, '..')).object;
     
     describe('extend method', function () {
 

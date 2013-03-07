@@ -7,7 +7,7 @@ chai.should();
 
 describe('ntools.string', function () {
 
-    var string = require(path.resolve(path.join(__dirname, '..', 'ntools'))).string;
+    var string = require(path.resolve(path.join(__dirname, '..'))).string;
     
     it('has method unescapeHtml', function () {
         string.unescapeHtml('baseline').should.equal('baseline');

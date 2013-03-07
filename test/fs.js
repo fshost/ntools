@@ -11,7 +11,7 @@ function fpath (filename) {
 
 describe('ntools.fs', function () {
 
-    var fs = require(path.join(__dirname, '..', 'ntools')).fs;
+    var fs = require(path.join(__dirname, '..')).fs;
     
     it('should have the Node.js fs methods', function () {
         fs.readFile.should.be.a('function');

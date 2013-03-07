@@ -6,7 +6,7 @@ chai.should();
 
 describe('ntools.class', function () {
 
-    var nclass = require(path.join(__dirname, '..', 'ntools')).class;
+    var nclass = require(path.join(__dirname, '..')).class;
    
     var obj = { greet: function () { console.log('hello'); }, number: 1 };
 
