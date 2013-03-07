@@ -1,7 +1,7 @@
 {
     "name": "ntools",
     "description": "a collection of tools and utilities for node.js",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Mashdraggin",
     "license": "MIT",
     "repository": {

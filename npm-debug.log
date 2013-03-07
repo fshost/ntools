@@ -1,0 +1,19 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', 'N:\\npm\\node_modules\\npm\\bin\\npm-cli.js', 'link' ]
+2 info using npm@1.2.3
+3 info using node@v0.8.15
+4 verbose linkPkg Z:\ntools
+5 verbose read json Z:\ntools\package.json
+6 error Error: EPERM, symlink 'Z:\ntools'
+6 error  { [Error: EPERM, symlink 'Z:\ntools'] errno: 50, code: 'EPERM', path: 'Z:\\ntools' }
+7 error Please try running this command again as root/Administrator.
+8 error System Windows_NT 6.1.7601
+9 error command "node" "N:\\npm\\node_modules\\npm\\bin\\npm-cli.js" "link"
+10 error cwd Z:\ntools
+11 error node -v v0.8.15
+12 error npm -v 1.2.3
+13 error path Z:\ntools
+14 error code EPERM
+15 error errno 50
+16 error stack Error: EPERM, symlink 'Z:\ntools'
+17 verbose exit [ 50, true ]
