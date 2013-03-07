@@ -1,13 +1,13 @@
-﻿/// <reference path="../../nodelib/node.js" />
-var path = require('path');
+﻿var path = require('path');
 
-var assert = require('should');
+var chai = require('chai');
+var expect = chai.expect;
+chai.should();
 
-var ntools = require(path.resolve(path.join(__dirname, '..', 'ntools')));
 
 describe('ntools.string', function () {
 
-    var string = ntools.string;
+    var string = require(path.resolve(path.join(__dirname, '..', 'ntools'))).string;
     
     it('has method unescapeHtml', function () {
         string.unescapeHtml('baseline').should.equal('baseline');
