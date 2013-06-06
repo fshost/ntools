@@ -1,4 +1,9 @@
-/// <reference path="../../nodelib/node.js" />
-var h = require('helpers')(__dirname, exports);
+var lib = require('helpers')(__dirname, exports).lib;
 
-h.mixin('lib', true);
+lib.imports('string');
+lib.imports('object');
+lib.exports('string');
+lib.exports('object');
+lib.exports('class');
+lib.exports('array');
+lib.exports('fs');
