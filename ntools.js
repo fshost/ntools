@@ -7,3 +7,5 @@ lib.exports('object');
 lib.exports('class');
 lib.exports('array');
 lib.exports('fs');
+
+exports.array.matches = exports.matches;

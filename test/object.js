@@ -7,7 +7,7 @@ chai.should();
 describe('ntools.object', function () {
 
     var object = require(path.join(__dirname, '..')).object;
-    
+
     describe('extend method', function () {
 
         it('extends a target object with the properties of a source object', function () {
@@ -54,6 +54,21 @@ describe('ntools.object', function () {
 
     });
 
+    describe('matches method', function () {
+
+        it('checks if objects match', function () {
+            var obj1 = {
+                foo: 'bar'
+            };
+            var obj2 = {
+                foo: 'bar'
+            };
+            obj1.should.not.equal(obj2);
+            object.matches(obj1, obj2).should.equal(true);
+        });
+
+    });
+
     describe('clone method', function () {
 
         it('clones objects', function () {
@@ -79,4 +94,4 @@ describe('ntools.object', function () {
 
     });
 
-})
+});

@@ -13,9 +13,7 @@ describe('ntools.array', function () {
         it('extends a target array with items of a source array', function () {
             var target = [1, 2, 3];
             var source = [1, 4, 5, 6, 7];
-            
             var expected = [1, 2, 3, 4, 5, 6, 7];
-
             var result = array.extend(target, source);
             expect(result).to.deep.equal(expected);
         });
@@ -36,6 +34,7 @@ describe('ntools.array', function () {
 
         it('deep clones arrays and objects in the array by default', function () {
             result[0].should.not.equal(person);
+            result[0].name.should.not.equal(person.name);
             result[1].should.not.equal(list);
             result[1][2].should.not.equal(person);
         });
@@ -50,5 +49,26 @@ describe('ntools.array', function () {
 
     });
 
+    describe('matches method', function () {
 
-})
+        it('checks if arrays match', function () {
+            var a1 = [{
+                foo: 'bar'
+            }, {
+                fiz: 'buz'
+            }];
+            var a2 = [{
+                foo: 'bar'
+            }, {
+                fiz: 'buz'
+            }];
+            var a3 = [a2[0], a1[1]];
+            a1.should.not.equal(a2);
+            array.matches(a1, a2).should.equal(true);
+            array.matches(a1, a3).should.equal(true);
+            array.matches(a1, [a1[0], a2[0]]).should.equal(false);
+        });
+
+    });
+
+});
